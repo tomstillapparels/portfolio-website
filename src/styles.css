@@ -1,0 +1,163 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * TOMSTILL — Industrial Grade Quality.
+ * Brutalist wholesale apparel design system.
+ * Warm cream surfaces, deep ink primary, 2px brutalist borders, sharp corners.
+ */
+
+@theme inline {
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brutalist surface scale (warm earth tones) */
+  --color-surface: var(--surface);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-surface-variant: var(--surface-variant);
+
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-surface-tint: var(--surface-tint);
+  --color-ink: var(--ink);
+
+  --font-display: "Archivo Narrow", sans-serif;
+  --font-body: "Archivo Narrow", sans-serif;
+}
+
+:root {
+  --radius: 0px;
+  --background: oklch(0.97 0.012 90);
+  --foreground: oklch(0.18 0.008 75);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.008 75);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.008 75);
+
+  --primary: oklch(0.32 0.014 75);
+  --primary-foreground: oklch(0.97 0.012 90);
+  --secondary: oklch(0.46 0.025 110);
+  --secondary-foreground: oklch(0.97 0.012 90);
+  --muted: oklch(0.94 0.011 88);
+  --muted-foreground: oklch(0.55 0.015 75);
+  --accent: oklch(0.89 0.02 115);
+  --accent-foreground: oklch(0.32 0.014 75);
+  --destructive: oklch(0.44 0.18 22);
+  --destructive-foreground: oklch(0.97 0.012 90);
+  --border: oklch(0.55 0.015 75);
+  --input: oklch(0.90 0.011 85);
+  --ring: oklch(0.55 0.015 75);
+
+  /* Brutalist surface scale */
+  --surface: oklch(0.97 0.012 90);
+  --surface-dim: oklch(0.85 0.014 88);
+  --surface-bright: oklch(0.97 0.012 90);
+  --surface-container-lowest: oklch(1 0 0);
+  --surface-container-low: oklch(0.96 0.011 88);
+  --surface-container: oklch(0.94 0.011 88);
+  --surface-container-high: oklch(0.92 0.011 85);
+  --surface-container-highest: oklch(0.90 0.011 85);
+  --surface-variant: oklch(0.90 0.011 85);
+
+  --on-surface: oklch(0.18 0.008 75);
+  --on-surface-variant: oklch(0.37 0.012 75);
+  --outline: oklch(0.55 0.015 75);
+  --outline-variant: oklch(0.80 0.012 80);
+
+  --secondary-container: oklch(0.89 0.02 115);
+  --on-secondary-container: oklch(0.48 0.025 115);
+  --on-primary-container: oklch(0.69 0.015 80);
+  --tertiary: oklch(0.24 0.012 75);
+  --tertiary-container: oklch(0.33 0.012 75);
+  --surface-tint: oklch(0.46 0.02 75);
+  --ink: oklch(0.22 0.013 70);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+}
+
+/* Brutalist utilities */
+@utility brutalist-border {
+  border: 2px solid var(--ink);
+}
+
+@utility brutalist-border-top {
+  border-top: 2px solid var(--ink);
+}
+
+@utility brutalist-border-bottom {
+  border-bottom: 2px solid var(--ink);
+}
+
+@utility brutalist-input {
+  border: 2px solid var(--ink);
+  background-color: transparent;
+}
+
+@utility brutalist-button {
+  border: 2px solid var(--ink);
+  background-color: var(--ink);
+  color: var(--background);
+  transition: transform 0.1s ease;
+
+  &:active {
+    transform: translate(2px, 2px);
+  }
+}
+
+@utility active-nav {
+  border-bottom: 2px solid var(--primary);
+  color: var(--primary);
+  font-weight: 700;
+}
