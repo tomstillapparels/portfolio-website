@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Showcase", to: "/" },
   { label: "Categories", to: "/categories" },
   { label: "Brand Story", to: "/brand-story" },
-  { label: "Inquiry", to: "/inquiry" },
+  { label: "Enquiry", to: "/inquiry" },
 ] as const;
 
 export function SiteHeader() {

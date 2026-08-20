@@ -34,9 +34,12 @@ function ShowcasePage() {
             >
               View Catalog
             </Link>
-            <button className="bg-transparent text-primary px-8 py-4 border-2 border-primary font-display text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
-              Logistics
-            </button>
+            <Link
+              to="/inquiry"
+              className="bg-transparent text-primary px-8 py-4 border-2 border-primary font-display text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+            >
+              Enquiry
+            </Link>
           </div>
         </div>
         <div className="w-full lg:w-1/2 relative min-h-[409px] h-full bg-surface-container-highest">
