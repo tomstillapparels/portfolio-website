@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://speedy-client-spark.lovable.app/sitemap.xml
+Sitemap: https://tomstill.lovable.app/sitemap.xml

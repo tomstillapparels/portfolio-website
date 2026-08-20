@@ -8,7 +8,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // Set the Lovable preview host environment variable so assets (image placeholders) are proxied
 // and load properly during local development.
-process.env.LOVABLE_PREVIEW_HOST = "speedy-client-spark.lovable.app";
+process.env.LOVABLE_PREVIEW_HOST = "tomstill.lovable.app";
 
 export default defineConfig({
   tanstackStart: {

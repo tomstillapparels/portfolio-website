@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "https://speedy-client-spark.lovable.app";
+const BASE_URL = "https://tomstill.lovable.app";
 
 interface SitemapEntry {
   path: string;
