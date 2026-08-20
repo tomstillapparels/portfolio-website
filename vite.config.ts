@@ -6,6 +6,10 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Set the Lovable preview host environment variable so assets (image placeholders) are proxied
+// and load properly during local development.
+process.env.LOVABLE_PREVIEW_HOST = "speedy-client-spark.lovable.app";
+
 export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
