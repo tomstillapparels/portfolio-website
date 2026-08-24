@@ -8,9 +8,16 @@ export const Route = createFileRoute("/categories")({
   head: () => ({
     meta: [
       { title: "Categories — TOMSTILL" },
-      { name: "description", content: "Browse the TOMSTILL wholesale inventory. Premium tops, outerwear, and bottoms — industrial-grade apparel for high-volume retail." },
+      {
+        name: "description",
+        content:
+          "Browse the TOMSTILL wholesale inventory. Premium tops, outerwear, and bottoms — industrial-grade apparel for high-volume retail.",
+      },
       { property: "og:title", content: "Categories — TOMSTILL" },
-      { property: "og:description", content: "Browse the TOMSTILL wholesale inventory — industrial-grade apparel." },
+      {
+        property: "og:description",
+        content: "Browse the TOMSTILL wholesale inventory — industrial-grade apparel.",
+      },
     ],
   }),
   component: CategoriesPage,
@@ -52,7 +59,10 @@ function CategoriesPage() {
         )}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pb-12">
           {products.map((prod) => (
-            <article key={prod.sku} className="border-2 border-primary bg-background group relative flex flex-col h-full">
+            <article
+              key={prod.sku}
+              className="border-2 border-primary bg-background group relative flex flex-col h-full"
+            >
               <div className="relative w-full aspect-[4/5] border-b-2 border-primary overflow-hidden bg-surface-variant">
                 <img
                   src={prod.img}

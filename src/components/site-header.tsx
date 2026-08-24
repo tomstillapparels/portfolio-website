@@ -44,11 +44,7 @@ export function SiteHeader() {
       <div className="flex justify-between items-center w-full px-4 md:px-8 py-1 max-w-full">
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center" aria-label="TOMSTILL home">
-            <img
-              src={logoAsset.url}
-              alt="TOMSTILL"
-              className="h-8 md:h-10 w-auto"
-            />
+            <img src={logoAsset.url} alt="TOMSTILL" className="h-8 md:h-10 w-auto" />
           </Link>
           <nav className="hidden md:flex gap-6 ml-8">
             {navLinks.map((link) => {
@@ -105,7 +101,13 @@ export function SiteHeader() {
       </div>
       {mobileMenuOpen && (
         <div className="md:hidden bg-background brutalist-border-top p-4 flex flex-col gap-4">
-          <form onSubmit={runSearch} role="search" action="/categories" method="get" className="flex items-center brutalist-border px-3 py-2 bg-surface-container-lowest">
+          <form
+            onSubmit={runSearch}
+            role="search"
+            action="/categories"
+            method="get"
+            className="flex items-center brutalist-border px-3 py-2 bg-surface-container-lowest"
+          >
             <Search className="text-on-surface-variant mr-2 h-4 w-4" />
             <input
               value={query}

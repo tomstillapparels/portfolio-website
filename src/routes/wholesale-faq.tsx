@@ -6,9 +6,16 @@ export const Route = createFileRoute("/wholesale-faq")({
   head: () => ({
     meta: [
       { title: "Wholesale FAQ — TOMSTILL" },
-      { name: "description", content: "Answers to common questions about TOMSTILL wholesale orders, MOQ, dispatch, and international delivery." },
+      {
+        name: "description",
+        content:
+          "Answers to common questions about TOMSTILL wholesale orders, MOQ, dispatch, and international delivery.",
+      },
       { property: "og:title", content: "Wholesale FAQ — TOMSTILL" },
-      { property: "og:description", content: "Common questions about TOMSTILL wholesale orders, MOQ, and delivery." },
+      {
+        property: "og:description",
+        content: "Common questions about TOMSTILL wholesale orders, MOQ, and delivery.",
+      },
     ],
   }),
   component: WholesaleFaqPage,
@@ -65,7 +72,9 @@ function WholesaleFaqPage() {
   return (
     <main className="flex-grow w-full max-w-4xl mx-auto px-4 md:px-8 py-12">
       <header className="mb-12 border-b-2 border-primary pb-4">
-        <p className="font-display uppercase tracking-widest text-on-surface-variant text-xs mb-2">Support</p>
+        <p className="font-display uppercase tracking-widest text-on-surface-variant text-xs mb-2">
+          Support
+        </p>
         <h1 className="font-display text-4xl md:text-6xl text-primary uppercase">Wholesale FAQ</h1>
         <p className="font-body text-lg text-on-surface-variant max-w-2xl mt-4">
           Common questions about ordering, dispatch, and delivery with TOMSTILL. Still need help?

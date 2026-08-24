@@ -87,7 +87,7 @@
   --destructive: oklch(0.44 0.18 22);
   --destructive-foreground: oklch(0.97 0.012 90);
   --border: oklch(0.55 0.015 75);
-  --input: oklch(0.90 0.011 85);
+  --input: oklch(0.9 0.011 85);
   --ring: oklch(0.55 0.015 75);
 
   /* Brutalist surface scale */
@@ -98,13 +98,13 @@
   --surface-container-low: oklch(0.96 0.011 88);
   --surface-container: oklch(0.94 0.011 88);
   --surface-container-high: oklch(0.92 0.011 85);
-  --surface-container-highest: oklch(0.90 0.011 85);
-  --surface-variant: oklch(0.90 0.011 85);
+  --surface-container-highest: oklch(0.9 0.011 85);
+  --surface-variant: oklch(0.9 0.011 85);
 
   --on-surface: oklch(0.18 0.008 75);
   --on-surface-variant: oklch(0.37 0.012 75);
   --outline: oklch(0.55 0.015 75);
-  --outline-variant: oklch(0.80 0.012 80);
+  --outline-variant: oklch(0.8 0.012 80);
 
   --secondary-container: oklch(0.89 0.02 115);
   --on-secondary-container: oklch(0.48 0.025 115);
