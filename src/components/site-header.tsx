@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "@tanstack/react-router";
 import { Menu, Search } from "lucide-react";
-import logoAsset from "@/assets/tomstill-logo.png.asset.json";
+import logoAsset from "@/assets/tomstill-logo.png";
 import { openWhatsApp } from "@/lib/whatsapp";
 
 const navLinks = [
@@ -44,7 +44,7 @@ export function SiteHeader() {
       <div className="flex justify-between items-center w-full px-4 md:px-8 py-1 max-w-full">
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center" aria-label="TOMSTILL home">
-            <img src={logoAsset.url} alt="TOMSTILL" className="h-8 md:h-10 w-auto" />
+            <img src={logoAsset} alt="TOMSTILL" className="h-8 md:h-10 w-auto" />
           </Link>
           <nav className="hidden md:flex gap-6 ml-8">
             {navLinks.map((link) => {
