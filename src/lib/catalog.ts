@@ -33,7 +33,6 @@ export const newArrivals: Product[] = [
     sku: "TNK-EMR-01",
     desc: "Acid-wash panelled jersey. Raw-edge armholes.",
     img: emiratesPanelTank,
-    badge: "Low Stock",
   },
   {
     title: "Breakers 72 Velour Polo",
