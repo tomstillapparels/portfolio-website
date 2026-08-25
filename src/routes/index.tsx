@@ -3,17 +3,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Tomstill - Your Streetwear Wholesaler From India" },
+      { title: "TOMSTILL — Premium Streetwear Wholesale From India" },
       {
         name: "description",
         content:
-          "Premium streetwear essentials sourced for high-volume retail. Uncompromising materials, structured cuts, earth-toned palettes.",
+          "Premium ready-to-sell streetwear collections for wholesale. Source finished high-end designs, heavy knits, structured cutoffs, and trousers directly from India. Low MOQ, global dispatch, ready for retail.",
       },
-      { property: "og:title", content: "Tomstill - Your Streetwear Wholesaler From India" },
+      { property: "og:title", content: "TOMSTILL — Premium Streetwear Wholesale From India" },
       {
         property: "og:description",
         content:
-          "Premium streetwear essentials sourced for high-volume retail. Uncompromising materials, structured cuts, earth-toned palettes.",
+          "Premium ready-to-sell streetwear collections for wholesale. Source finished high-end designs, heavy knits, structured cutoffs, and trousers directly from India. Low MOQ, global dispatch, ready for retail.",
       },
     ],
   }),

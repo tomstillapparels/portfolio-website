@@ -79,11 +79,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Tomstill - Your Streetwear Wholesaler From India" },
+      { title: "TOMSTILL — Premium Streetwear Wholesale From India" },
       {
         name: "description",
         content:
-          "Premium wholesale streetwear essentials. Industrial grade quality for high-volume retail.",
+          "Premium ready-to-sell streetwear collections for wholesale. Source finished high-end designs, heavy knits, structured cutoffs, and trousers directly from India. Low MOQ, global dispatch, ready for retail.",
       },
       { property: "og:site_name", content: "TOMSTILL" },
       { property: "og:type", content: "website" },
