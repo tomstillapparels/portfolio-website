@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "@tanstack/react-router";
 import { Menu, Search } from "lucide-react";
 import logoAsset from "@/assets/tomstill-logo.png";
-import { openWhatsApp } from "@/lib/whatsapp";
 
 const navLinks = [
   { label: "Showcase", to: "/" },
@@ -84,12 +83,6 @@ export function SiteHeader() {
               aria-label="Search inventory"
             />
           </form>
-          <button
-            onClick={() => openWhatsApp("Hi TOMSTILL, I'd like to place a bulk wholesale order.")}
-            className="bg-primary text-primary-foreground font-display uppercase px-6 py-2 brutalist-border hover:bg-surface-tint transition-colors"
-          >
-            Bulk Order
-          </button>
           <button
             className="md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
