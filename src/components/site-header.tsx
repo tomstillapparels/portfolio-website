@@ -2,11 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "@tanstack/react-router";
 import { Menu, Search } from "lucide-react";
 import logoAsset from "@/assets/tomstill-logo.png";
+import { openWhatsApp } from "@/lib/whatsapp";
 
 const navLinks = [
   { label: "Showcase", to: "/" },
-  { label: "Portfolio", to: "/categories" },
-  { label: "About", to: "/about" },
+  { label: "Categories", to: "/categories" },
+  { label: "Brand Story", to: "/brand-story" },
+  { label: "Enquiry", to: "/inquiry" },
 ] as const;
 
 export function SiteHeader() {
@@ -69,7 +71,7 @@ export function SiteHeader() {
             method="get"
             className="hidden lg:flex items-center brutalist-border px-3 py-1 bg-surface-container-lowest"
           >
-            <button type="submit" aria-label="Search portfolio" className="mr-2 flex items-center">
+            <button type="submit" aria-label="Search inventory" className="mr-2 flex items-center">
               <Search className="text-on-surface-variant h-4 w-4" />
             </button>
             <input
@@ -77,11 +79,17 @@ export function SiteHeader() {
               onChange={handleChange}
               name="q"
               className="bg-transparent border-none focus:ring-0 font-display text-sm w-48 text-on-surface p-0 outline-none"
-              placeholder="Search Portfolio"
+              placeholder="Search Inventory"
               type="search"
-              aria-label="Search portfolio"
+              aria-label="Search inventory"
             />
           </form>
+          <button
+            onClick={() => openWhatsApp("Hi TOMSTILL, I'd like to place a bulk wholesale order.")}
+            className="bg-primary text-primary-foreground font-display uppercase px-6 py-2 brutalist-border hover:bg-surface-tint transition-colors"
+          >
+            Bulk Order
+          </button>
           <button
             className="md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -106,9 +114,9 @@ export function SiteHeader() {
               onChange={handleChange}
               name="q"
               className="bg-transparent font-display text-sm w-full text-on-surface p-0 outline-none"
-              placeholder="Search Portfolio"
+              placeholder="Search Inventory"
               type="search"
-              aria-label="Search portfolio"
+              aria-label="Search inventory"
             />
           </form>
           {navLinks.map((link) => (

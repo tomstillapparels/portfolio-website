@@ -3,17 +3,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "TOMSTILL — Men's Apparel Manufacturing & Wholesale Portfolio" },
+      { title: "TOMSTILL — Premium Streetwear Wholesale From India" },
       {
         name: "description",
         content:
-          "Premium men's apparel manufacturing and wholesale portfolio from Tiruppur, India. Serving distributors and wholesalers across India, the Middle East, and Europe.",
+          "Premium ready-to-sell streetwear collections for wholesale. Source finished high-end designs, heavy knits, structured cutoffs, and trousers directly from India. Low MOQ, global dispatch, ready for retail.",
       },
-      { property: "og:title", content: "TOMSTILL — Men's Apparel Manufacturing & Wholesale Portfolio" },
+      { property: "og:title", content: "TOMSTILL — Premium Streetwear Wholesale From India" },
       {
         property: "og:description",
         content:
-          "Premium men's apparel manufacturing and wholesale portfolio from Tiruppur, India. Serving distributors and wholesalers across India, the Middle East, and Europe.",
+          "Premium ready-to-sell streetwear collections for wholesale. Source finished high-end designs, heavy knits, structured cutoffs, and trousers directly from India. Low MOQ, global dispatch, ready for retail.",
       },
     ],
   }),
@@ -22,6 +22,7 @@ export const Route = createFileRoute("/")({
 
 import { ArrowRight } from "lucide-react";
 import { heroEditorial, newArrivals } from "@/lib/catalog";
+import { openWhatsApp } from "@/lib/whatsapp";
 
 function ShowcasePage() {
   return (
@@ -36,7 +37,7 @@ function ShowcasePage() {
             Quality
           </h1>
           <p className="font-body text-lg text-on-surface-variant mb-12 max-w-md">
-            Wholesale men's apparel manufacturing & brand portfolio. Uncompromising materials.
+            Premium streetwear essentials sourced for high-volume retail. Uncompromising materials.
             Structured cuts. Earth-toned palettes.
           </p>
           <div className="flex flex-wrap gap-4">
@@ -44,13 +45,13 @@ function ShowcasePage() {
               to="/categories"
               className="bg-primary text-primary-foreground px-8 py-4 font-display text-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-300"
             >
-              Wholesale Portfolio
+              View Catalog
             </Link>
             <Link
-              to="/about"
+              to="/inquiry"
               className="bg-transparent text-primary px-8 py-4 border-2 border-primary font-display text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
             >
-              Company Profile
+              Enquiry
             </Link>
           </div>
         </div>
@@ -68,13 +69,13 @@ function ShowcasePage() {
       <section className="w-full px-4 md:px-8 py-24 bg-surface">
         <div className="flex justify-between items-end mb-12 border-b border-outline pb-4">
           <h2 className="font-display text-3xl text-primary uppercase tracking-tighter">
-            Apparel Collection
+            New Arrivals
           </h2>
           <Link
             to="/categories"
             className="font-display text-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors flex items-center gap-2"
           >
-            Full Portfolio <ArrowRight className="h-4 w-4" />
+            Full Inventory <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-outline">
@@ -105,12 +106,16 @@ function ShowcasePage() {
                 <p className="font-display text-outline uppercase tracking-wider mb-4">
                   SKU: {prod.sku}
                 </p>
-                <Link
-                  to="/categories"
-                  className="w-full py-3 border border-outline text-primary font-display text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors text-center block"
+                <button
+                  onClick={() =>
+                    openWhatsApp(
+                      `Hi TOMSTILL, I'd like a wholesale quote for ${prod.title} (SKU: ${prod.sku}).`,
+                    )
+                  }
+                  className="w-full py-3 border border-outline text-primary font-display text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
-                  View in Portfolio
-                </Link>
+                  Request Quote
+                </button>
               </div>
             </div>
           ))}
@@ -127,11 +132,11 @@ function ShowcasePage() {
         />
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
           <h2 className="font-display text-4xl text-primary uppercase leading-none mb-6">
-            Bulk Logistics & Scale
+            Bulk Logistics
           </h2>
           <p className="font-body text-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
             Streamlined international shipping. Factory-direct sourcing. We handle the complexity of
-            large-scale garment fulfillment for distributors across continents.
+            large-scale garment fulfillment so you can focus on retail.
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-8">
             <div className="text-center">

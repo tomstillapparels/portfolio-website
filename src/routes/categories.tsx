@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/categories")({
   validateSearch: (search: Record<string, unknown>): { q?: string } => {
@@ -7,101 +7,92 @@ export const Route = createFileRoute("/categories")({
   },
   head: () => ({
     meta: [
-      { title: "Wholesale Portfolio — TOMSTILL" },
+      { title: "Categories — TOMSTILL" },
       {
         name: "description",
         content:
-          "Visual lookbook and wholesale portfolio of TOMSTILL men's apparel. Manufactured and wholesaled from Tiruppur, India.",
+          "Browse the TOMSTILL wholesale inventory. Premium tops, outerwear, and bottoms — industrial-grade apparel for high-volume retail.",
       },
-      { property: "og:title", content: "Wholesale Portfolio — TOMSTILL" },
+      { property: "og:title", content: "Categories — TOMSTILL" },
       {
         property: "og:description",
-        content: "Visual lookbook and wholesale portfolio of TOMSTILL men's apparel.",
+        content: "Browse the TOMSTILL wholesale inventory — industrial-grade apparel.",
       },
     ],
   }),
-  component: CollectionsPage,
+  component: CategoriesPage,
 });
 
 import { catalogProducts } from "@/lib/catalog";
+import { openWhatsApp } from "@/lib/whatsapp";
 
-function CollectionsPage() {
+function CategoriesPage() {
   const { q } = Route.useSearch();
   const query = (q ?? "").trim().toLowerCase().slice(0, 100);
   const terms = query.split(/\s+/).filter(Boolean);
-
-  const images = terms.length
+  const products = terms.length
     ? catalogProducts.filter((p) => {
-        const haystack = [p.title, p.sku, p.desc, p.badge ?? ""]
-          .join(" ")
-          .toLowerCase();
+        const haystack = [p.title, p.sku, p.desc, p.badge ?? ""].join(" ").toLowerCase();
         return terms.every((t) => haystack.includes(t));
       })
     : catalogProducts;
 
   return (
-    <main className="flex-grow w-full bg-background min-h-screen">
-      {/* Header */}
-      <section className="w-full px-4 sm:px-6 md:px-8 py-10 sm:py-14 border-b border-outline bg-surface">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div>
-            <span className="font-display text-xs uppercase tracking-[0.3em] text-on-surface-variant block mb-2">
-              Visual Archive
-            </span>
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary leading-[0.9] uppercase">
-              Wholesale Portfolio
+    <div className="flex flex-1 relative w-full max-w-[1920px] mx-auto min-h-screen">
+      <main className="flex-1 px-4 md:px-8 bg-surface w-full min-h-screen">
+        <div className="mb-6">
+          <div className="border-b-2 border-primary pb-4">
+            <h1 className="font-display text-3xl md:text-5xl text-primary uppercase tracking-tighter">
+              Premium Streetwear Collection
             </h1>
+            {query && (
+              <p className="font-display text-sm uppercase tracking-widest text-on-surface-variant mt-3">
+                {products.length} result{products.length === 1 ? "" : "s"} for "{query}"
+              </p>
+            )}
           </div>
-          <p className="font-display text-xs sm:text-sm uppercase tracking-widest text-on-surface-variant max-w-xs">
-            {images.length} Imagery Entries • Tiruppur Manufacturing
-          </p>
         </div>
-      </section>
-
-      {/* Stacked Images — 1 Image Per Row */}
-      <section className="w-full">
-        {images.length === 0 ? (
-          <p className="font-body text-on-surface-variant py-16 text-center">
-            No images match that search. Try a different search term.
+        {products.length === 0 && (
+          <p className="font-body text-on-surface-variant pb-12">
+            No inventory matches that search. Try a different style, SKU, or fabric.
           </p>
-        ) : (
-          <div className="flex flex-col w-full">
-            {images.map((prod) => (
-              <div
-                key={prod.sku}
-                className="w-full border-b border-outline relative bg-surface-variant overflow-hidden group"
-              >
-                <div className="w-full h-[50vh] sm:h-[65vh] md:h-[80vh] min-h-[350px] relative">
-                  <img
-                    src={prod.img}
-                    alt="TOMSTILL Apparel"
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
         )}
-      </section>
-
-      {/* Minimal Footer CTA */}
-      <section className="w-full px-4 sm:px-6 md:px-8 py-16 sm:py-20 bg-surface border-t border-outline">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-primary uppercase leading-tight mb-4">
-            TOMSTILL APPARELS PVT LTD
-          </h2>
-          <p className="font-body text-base sm:text-lg text-on-surface-variant mb-8 leading-relaxed">
-            Supplying distributors and wholesalers across India, the Middle East, and Europe.
-          </p>
-          <Link
-            to="/about"
-            className="inline-block bg-primary text-primary-foreground px-8 sm:px-10 py-3.5 sm:py-4 font-display text-xs sm:text-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-300"
-          >
-            Explore Company Profile
-          </Link>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pb-12">
+          {products.map((prod) => (
+            <article
+              key={prod.sku}
+              className="border-2 border-primary bg-background group relative flex flex-col h-full"
+            >
+              <div className="relative w-full aspect-[4/5] border-b-2 border-primary overflow-hidden bg-surface-variant">
+                <img
+                  src={prod.img}
+                  alt={prod.title}
+                  width={640}
+                  height={800}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-4 flex flex-1 flex-col">
+                <div className="flex justify-between items-start mb-2">
+                  <h2 className="font-display text-xl text-primary leading-tight">{prod.title}</h2>
+                </div>
+                <p className="font-body text-on-surface-variant text-sm mb-4">{prod.desc}</p>
+                <button
+                  onClick={() =>
+                    openWhatsApp(
+                      `Hi TOMSTILL, I'd like a wholesale quote for ${prod.title} (SKU: ${prod.sku}).`,
+                    )
+                  }
+                  className="mt-auto pt-4 border-t border-outline font-display uppercase text-primary text-left hover:text-secondary transition-colors"
+                >
+                  Request Quote
+                </button>
+              </div>
+            </article>
+          ))}
         </div>
-      </section>
-    </main>
+      </main>
+    </div>
   );
 }

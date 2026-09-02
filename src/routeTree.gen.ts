@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as BrandStoryRouteImport } from './routes/brand-story'
 import { Route as CategoriesRouteImport } from './routes/categories'
 import { Route as InquiryRouteImport } from './routes/inquiry'
@@ -23,11 +22,6 @@ import { Route as WholesaleFaqRouteImport } from './routes/wholesale-faq'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BrandStoryRoute = BrandStoryRouteImport.update({
@@ -73,7 +67,6 @@ const WholesaleFaqRoute = WholesaleFaqRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/brand-story': typeof BrandStoryRoute
   '/categories': typeof CategoriesRoute
   '/inquiry': typeof InquiryRoute
@@ -85,7 +78,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/brand-story': typeof BrandStoryRoute
   '/categories': typeof CategoriesRoute
   '/inquiry': typeof InquiryRoute
@@ -98,7 +90,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/brand-story': typeof BrandStoryRoute
   '/categories': typeof CategoriesRoute
   '/inquiry': typeof InquiryRoute
@@ -112,7 +103,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about'
     | '/brand-story'
     | '/categories'
     | '/inquiry'
@@ -124,7 +114,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/about'
     | '/brand-story'
     | '/categories'
     | '/inquiry'
@@ -136,7 +125,6 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/about'
     | '/brand-story'
     | '/categories'
     | '/inquiry'
@@ -149,7 +137,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
   BrandStoryRoute: typeof BrandStoryRoute
   CategoriesRoute: typeof CategoriesRoute
   InquiryRoute: typeof InquiryRoute
@@ -167,13 +154,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/brand-story': {
@@ -237,7 +217,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
   BrandStoryRoute: BrandStoryRoute,
   CategoriesRoute: CategoriesRoute,
   InquiryRoute: InquiryRoute,
