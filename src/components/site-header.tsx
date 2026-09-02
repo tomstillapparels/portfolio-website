@@ -5,7 +5,7 @@ import logoAsset from "@/assets/tomstill-logo.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
-  { label: "Categories", to: "/categories" },
+  { label: "Collection", to: "/categories" },
   { label: "About", to: "/about" },
   { label: "Enquiry", to: "/inquiry" },
 ] as const;
