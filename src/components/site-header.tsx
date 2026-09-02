@@ -4,7 +4,7 @@ import { Menu } from "lucide-react";
 import logoAsset from "@/assets/tomstill-logo.png";
 
 const navLinks = [
-  { label: "Showcase", to: "/" },
+  { label: "Home", to: "/" },
   { label: "Categories", to: "/categories" },
   { label: "About", to: "/about" },
   { label: "Enquiry", to: "/inquiry" },
