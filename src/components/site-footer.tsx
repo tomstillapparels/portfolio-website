@@ -34,6 +34,12 @@ export function SiteFooter() {
       </div>
       <div className="flex flex-col gap-4">
         <Link
+          to="/categories"
+          className="font-display uppercase tracking-widest text-primary-foreground opacity-60 hover:opacity-100 transition-opacity"
+        >
+          Portfolio
+        </Link>
+        <Link
           to="/about"
           className="font-display uppercase tracking-widest text-primary-foreground opacity-60 hover:opacity-100 transition-opacity"
         >

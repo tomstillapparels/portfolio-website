@@ -5,9 +5,8 @@ import logoAsset from "@/assets/tomstill-logo.png";
 
 const navLinks = [
   { label: "Showcase", to: "/" },
-  { label: "Collections", to: "/categories" },
+  { label: "Portfolio", to: "/categories" },
   { label: "About", to: "/about" },
-  { label: "Enquiry", to: "/inquiry" },
 ] as const;
 
 export function SiteHeader() {
@@ -70,7 +69,7 @@ export function SiteHeader() {
             method="get"
             className="hidden lg:flex items-center brutalist-border px-3 py-1 bg-surface-container-lowest"
           >
-            <button type="submit" aria-label="Search inventory" className="mr-2 flex items-center">
+            <button type="submit" aria-label="Search portfolio" className="mr-2 flex items-center">
               <Search className="text-on-surface-variant h-4 w-4" />
             </button>
             <input
@@ -78,9 +77,9 @@ export function SiteHeader() {
               onChange={handleChange}
               name="q"
               className="bg-transparent border-none focus:ring-0 font-display text-sm w-48 text-on-surface p-0 outline-none"
-              placeholder="Search Collection"
+              placeholder="Search Portfolio"
               type="search"
-              aria-label="Search inventory"
+              aria-label="Search portfolio"
             />
           </form>
           <button
@@ -107,9 +106,9 @@ export function SiteHeader() {
               onChange={handleChange}
               name="q"
               className="bg-transparent font-display text-sm w-full text-on-surface p-0 outline-none"
-              placeholder="Search Collection"
+              placeholder="Search Portfolio"
               type="search"
-              aria-label="Search inventory"
+              aria-label="Search portfolio"
             />
           </form>
           {navLinks.map((link) => (

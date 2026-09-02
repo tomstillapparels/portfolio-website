@@ -7,16 +7,16 @@ export const Route = createFileRoute("/categories")({
   },
   head: () => ({
     meta: [
-      { title: "Collections — TOMSTILL" },
+      { title: "Wholesale Portfolio — TOMSTILL" },
       {
         name: "description",
         content:
-          "Visual lookbook and image archive of TOMSTILL men's apparel. Manufactured and wholesaled from Tiruppur, India.",
+          "Visual lookbook and wholesale portfolio of TOMSTILL men's apparel. Manufactured and wholesaled from Tiruppur, India.",
       },
-      { property: "og:title", content: "Collections — TOMSTILL" },
+      { property: "og:title", content: "Wholesale Portfolio — TOMSTILL" },
       {
         property: "og:description",
-        content: "Visual lookbook and image archive of TOMSTILL men's apparel.",
+        content: "Visual lookbook and wholesale portfolio of TOMSTILL men's apparel.",
       },
     ],
   }),
@@ -49,7 +49,7 @@ function CollectionsPage() {
               Visual Archive
             </span>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary leading-[0.9] uppercase">
-              The Collection
+              Wholesale Portfolio
             </h1>
           </div>
           <p className="font-display text-xs sm:text-sm uppercase tracking-widest text-on-surface-variant max-w-xs">
@@ -89,16 +89,16 @@ function CollectionsPage() {
       <section className="w-full px-4 sm:px-6 md:px-8 py-16 sm:py-20 bg-surface border-t border-outline">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-primary uppercase leading-tight mb-4">
-            Wholesale & Manufacturing Inquiries
+            TOMSTILL APPARELS PVT LTD
           </h2>
           <p className="font-body text-base sm:text-lg text-on-surface-variant mb-8 leading-relaxed">
             Supplying distributors and wholesalers across India, the Middle East, and Europe.
           </p>
           <Link
-            to="/inquiry"
+            to="/about"
             className="inline-block bg-primary text-primary-foreground px-8 sm:px-10 py-3.5 sm:py-4 font-display text-xs sm:text-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-300"
           >
-            Get In Touch
+            Explore Company Profile
           </Link>
         </div>
       </section>

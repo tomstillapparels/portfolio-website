@@ -30,7 +30,7 @@ const FAQS: Faq[] = [
   },
   {
     q: "How do I place a wholesale order?",
-    a: "Submit a bulk inquiry through our Inquiry page, or message us directly on WhatsApp at +91 90354 29042 with your company details, desired styles, and volume. We respond with a quotation and confirm production and dispatch details.",
+    a: "Explore our Wholesale Portfolio or message us directly on WhatsApp at +91 90354 29042 with your company details, desired styles, and volume. We respond with a quotation and confirm production and dispatch details.",
   },
   {
     q: "How fast do you dispatch orders?",

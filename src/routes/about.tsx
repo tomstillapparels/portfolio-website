@@ -127,10 +127,10 @@ function HeroSection() {
               Explore Collection
             </Link>
             <Link
-              to="/inquiry"
+              to="/categories"
               className="bg-transparent text-primary px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-primary font-display text-xs sm:text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
             >
-              Get In Touch
+              Wholesale Portfolio
             </Link>
           </div>
         </div>
@@ -803,10 +803,10 @@ function ClosingSection() {
               Explore Collection
             </Link>
             <Link
-              to="/inquiry"
+              to="/categories"
               className="bg-transparent text-primary px-8 sm:px-10 py-3.5 sm:py-4 border-2 border-primary font-display text-xs sm:text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
             >
-              Get In Touch
+              Wholesale Portfolio
             </Link>
           </div>
         </div>
