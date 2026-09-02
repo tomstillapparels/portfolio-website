@@ -79,11 +79,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "TOMSTILL — Premium Streetwear Wholesale From India" },
+      { title: "TOMSTILL — Men's Apparel Manufacturing & Wholesale" },
       {
         name: "description",
         content:
-          "Premium ready-to-sell streetwear collections for wholesale. Source finished high-end designs, heavy knits, structured cutoffs, and trousers directly from India. Low MOQ, global dispatch, ready for retail.",
+          "Premium men's apparel manufacturing and wholesale from Tiruppur, India. Serving distributors and wholesalers across India, the Middle East, and Europe.",
       },
       { property: "og:site_name", content: "TOMSTILL" },
       { property: "og:type", content: "website" },

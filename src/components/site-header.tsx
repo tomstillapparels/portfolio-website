@@ -6,8 +6,8 @@ import { openWhatsApp } from "@/lib/whatsapp";
 
 const navLinks = [
   { label: "Showcase", to: "/" },
-  { label: "Categories", to: "/categories" },
-  { label: "Brand Story", to: "/brand-story" },
+  { label: "Collections", to: "/categories" },
+  { label: "About", to: "/about" },
   { label: "Enquiry", to: "/inquiry" },
 ] as const;
 
@@ -79,7 +79,7 @@ export function SiteHeader() {
               onChange={handleChange}
               name="q"
               className="bg-transparent border-none focus:ring-0 font-display text-sm w-48 text-on-surface p-0 outline-none"
-              placeholder="Search Inventory"
+              placeholder="Search Collection"
               type="search"
               aria-label="Search inventory"
             />
@@ -114,7 +114,7 @@ export function SiteHeader() {
               onChange={handleChange}
               name="q"
               className="bg-transparent font-display text-sm w-full text-on-surface p-0 outline-none"
-              placeholder="Search Inventory"
+              placeholder="Search Collection"
               type="search"
               aria-label="Search inventory"
             />

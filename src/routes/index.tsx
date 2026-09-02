@@ -3,17 +3,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "TOMSTILL — Premium Streetwear Wholesale From India" },
+      { title: "TOMSTILL — Men's Apparel Manufacturing & Wholesale" },
       {
         name: "description",
         content:
-          "Premium ready-to-sell streetwear collections for wholesale. Source finished high-end designs, heavy knits, structured cutoffs, and trousers directly from India. Low MOQ, global dispatch, ready for retail.",
+          "Premium men's apparel manufacturing and wholesale from Tiruppur, India. Serving distributors and wholesalers across India, the Middle East, and Europe.",
       },
-      { property: "og:title", content: "TOMSTILL — Premium Streetwear Wholesale From India" },
+      { property: "og:title", content: "TOMSTILL — Men's Apparel Manufacturing & Wholesale" },
       {
         property: "og:description",
         content:
-          "Premium ready-to-sell streetwear collections for wholesale. Source finished high-end designs, heavy knits, structured cutoffs, and trousers directly from India. Low MOQ, global dispatch, ready for retail.",
+          "Premium men's apparel manufacturing and wholesale from Tiruppur, India. Serving distributors and wholesalers across India, the Middle East, and Europe.",
       },
     ],
   }),
@@ -22,7 +22,6 @@ export const Route = createFileRoute("/")({
 
 import { ArrowRight } from "lucide-react";
 import { heroEditorial, newArrivals } from "@/lib/catalog";
-import { openWhatsApp } from "@/lib/whatsapp";
 
 function ShowcasePage() {
   return (
@@ -45,13 +44,13 @@ function ShowcasePage() {
               to="/categories"
               className="bg-primary text-primary-foreground px-8 py-4 font-display text-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-300"
             >
-              View Catalog
+              Explore Collections
             </Link>
             <Link
               to="/inquiry"
               className="bg-transparent text-primary px-8 py-4 border-2 border-primary font-display text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
             >
-              Enquiry
+              Wholesale Enquiry
             </Link>
           </div>
         </div>
@@ -75,7 +74,7 @@ function ShowcasePage() {
             to="/categories"
             className="font-display text-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors flex items-center gap-2"
           >
-            Full Inventory <ArrowRight className="h-4 w-4" />
+            Full Collection <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-outline">
@@ -106,16 +105,12 @@ function ShowcasePage() {
                 <p className="font-display text-outline uppercase tracking-wider mb-4">
                   SKU: {prod.sku}
                 </p>
-                <button
-                  onClick={() =>
-                    openWhatsApp(
-                      `Hi TOMSTILL, I'd like a wholesale quote for ${prod.title} (SKU: ${prod.sku}).`,
-                    )
-                  }
-                  className="w-full py-3 border border-outline text-primary font-display text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors"
+                <Link
+                  to="/categories"
+                  className="w-full py-3 border border-outline text-primary font-display text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors text-center block"
                 >
-                  Request Quote
-                </button>
+                  View in Collection
+                </Link>
               </div>
             </div>
           ))}
