@@ -5,7 +5,9 @@ import {
   Warehouse,
   Globe2,
   MapPin,
-  ArrowDown,
+  Scissors,
+  Layers,
+  CheckCircle,
 } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useCountUp } from "@/hooks/use-count-up";
@@ -30,27 +32,6 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
-/* ─── Image Placeholder ─── */
-function ImagePlaceholder({
-  label,
-  className = "",
-  aspectClass = "aspect-[4/5]",
-}: {
-  label: string;
-  className?: string;
-  aspectClass?: string;
-}) {
-  return (
-    <div
-      className={`bg-surface-dim border-2 border-dashed border-outline flex items-center justify-center ${aspectClass} ${className}`}
-    >
-      <span className="font-display text-xs sm:text-sm uppercase tracking-widest text-on-surface-variant text-center px-4 leading-relaxed">
-        {label}
-      </span>
-    </div>
-  );
-}
-
 /* ─── Section wrapper with scroll reveal ─── */
 function RevealSection({
   children,
@@ -73,7 +54,7 @@ function RevealSection({
 }
 
 /* ═══════════════════════════════════════════════════════════
-   ABOUT PAGE
+   ABOUT PAGE — PURE EDITORIAL TYPOGRAPHIC ARCHITECTURE
    ═══════════════════════════════════════════════════════════ */
 function AboutPage() {
   return (
@@ -97,16 +78,17 @@ function HeroSection() {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
-    <section className="w-full min-h-[85vh] md:min-h-[90vh] flex flex-col lg:flex-row border-b border-outline">
+    <section className="w-full min-h-[80vh] flex flex-col lg:flex-row border-b border-outline">
+      {/* Left editorial headline & copy */}
       <div
         ref={ref}
-        className="w-full lg:w-1/2 p-6 md:p-12 lg:p-16 flex flex-col justify-center bg-surface order-2 lg:order-1"
+        className="w-full lg:w-7/12 p-6 sm:p-10 md:p-14 lg:p-16 flex flex-col justify-center bg-surface border-b lg:border-b-0 lg:border-r border-outline"
       >
         <div
           className={`scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
           style={{ transitionDelay: "0.1s" }}
         >
-          <p className="font-display text-xs sm:text-sm uppercase tracking-[0.3em] text-on-surface-variant mb-4 md:mb-6">
+          <p className="font-display text-xs sm:text-sm uppercase tracking-[0.3em] text-on-surface-variant mb-4 sm:mb-6">
             Est. 2008 — Tiruppur, India
           </p>
         </div>
@@ -114,7 +96,7 @@ function HeroSection() {
           className={`scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
           style={{ transitionDelay: "0.25s" }}
         >
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-primary leading-[0.9] uppercase mb-6 md:mb-8">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-primary leading-[0.9] uppercase mb-6 sm:mb-8">
             From Tiruppur.
             <br />
             Built Around
@@ -126,7 +108,7 @@ function HeroSection() {
           className={`scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
           style={{ transitionDelay: "0.45s" }}
         >
-          <p className="font-body text-base sm:text-lg text-on-surface-variant max-w-lg mb-8 md:mb-10 leading-relaxed">
+          <p className="font-body text-base sm:text-lg text-on-surface-variant max-w-xl mb-8 sm:mb-10 leading-relaxed">
             Founded in 2008, TOMSTILL began with a simple ambition: to introduce
             new fashion styles into men's clothing. Today, we manufacture and
             wholesale men's apparel for distributors and wholesalers across India
@@ -140,25 +122,56 @@ function HeroSection() {
           <div className="flex flex-wrap gap-3 sm:gap-4">
             <Link
               to="/categories"
-              className="bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 font-display text-xs sm:text-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-300"
+              className="bg-primary text-primary-foreground px-6 sm:px-8 py-3.5 sm:py-4 font-display text-xs sm:text-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-300"
             >
               Explore Collection
             </Link>
             <Link
               to="/inquiry"
-              className="bg-transparent text-primary px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary font-display text-xs sm:text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+              className="bg-transparent text-primary px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-primary font-display text-xs sm:text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
             >
               Get In Touch
             </Link>
           </div>
         </div>
       </div>
-      <div className="w-full lg:w-1/2 relative min-h-[50vh] sm:min-h-[60vh] lg:min-h-0 bg-surface-container-highest order-1 lg:order-2">
-        <ImagePlaceholder
-          label="[CLIENT PHOTO: TOMSTILL Editorial / Factory / Fashion]"
-          className="absolute inset-0 border-0"
-          aspectClass=""
-        />
+
+      {/* Right graphic manifesto banner */}
+      <div className="w-full lg:w-5/12 p-8 sm:p-12 lg:p-16 bg-surface-container-highest flex flex-col justify-between min-h-[350px]">
+        <div>
+          <span className="font-display text-xs uppercase tracking-[0.3em] text-on-surface-variant block mb-4">
+            Corporate Profile
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl text-primary uppercase leading-tight mb-6">
+            TOMSTILL APPARELS PVT LTD
+          </h2>
+        </div>
+        <div className="border-t-2 border-primary pt-6 flex flex-col gap-4">
+          <div>
+            <span className="font-display text-xs uppercase tracking-widest text-on-surface-variant block">
+              Origin
+            </span>
+            <span className="font-display text-lg uppercase text-primary">
+              Tiruppur, Tamil Nadu, India
+            </span>
+          </div>
+          <div>
+            <span className="font-display text-xs uppercase tracking-widest text-on-surface-variant block">
+              Focus
+            </span>
+            <span className="font-display text-lg uppercase text-primary">
+              Men's Apparel Manufacturing & Wholesale
+            </span>
+          </div>
+          <div>
+            <span className="font-display text-xs uppercase tracking-widest text-on-surface-variant block">
+              Market Reach
+            </span>
+            <span className="font-display text-lg uppercase text-primary">
+              India • Middle East • Europe
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -181,14 +194,14 @@ function BeginningSection() {
           </span>
         </div>
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-16 sm:pt-20 md:pt-24 lg:pt-0">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-12 sm:pt-16 md:pt-20">
           <div className="lg:col-span-7">
             <div
               className={`scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
               style={{ transitionDelay: "0.15s" }}
             >
               <span className="font-display text-xs sm:text-sm uppercase tracking-[0.3em] text-on-surface-variant block mb-3 sm:mb-4">
-                Section 02
+                Section 02 — The Beginning
               </span>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-primary uppercase leading-tight mb-4 sm:mb-6">
                 The Journey Begins
@@ -207,15 +220,28 @@ function BeginningSection() {
               </p>
             </div>
           </div>
+
           <div
             className={`lg:col-span-5 scroll-hidden-right ${isVisible ? "scroll-visible-right" : ""}`}
             style={{ transitionDelay: "0.35s" }}
           >
-            <ImagePlaceholder
-              label="[CLIENT PHOTO: Early TOMSTILL / Founders / Original Workspace]"
-              aspectClass="aspect-[4/5]"
-              className="w-full"
-            />
+            {/* Styled editorial quote / manifesto card */}
+            <div className="brutalist-border bg-surface-container-lowest p-6 sm:p-8 flex flex-col justify-between">
+              <span className="font-display text-4xl sm:text-5xl text-primary/20 leading-none mb-4 block">
+                “
+              </span>
+              <p className="font-display text-xl sm:text-2xl text-primary uppercase leading-snug mb-6">
+                Built around a single ambition: to introduce new fashion styles into men's clothing through volume manufacturing.
+              </p>
+              <div className="border-t border-outline pt-4 flex justify-between items-center">
+                <span className="font-display text-xs uppercase tracking-widest text-on-surface-variant">
+                  Est. 2008
+                </span>
+                <span className="font-display text-xs uppercase tracking-widest text-primary font-bold">
+                  Tiruppur Hub
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -456,9 +482,30 @@ function BuiltToScaleSection() {
   );
 }
 
-/* ─── SECTION 06: MANUFACTURING STORY ─── */
+/* ─── SECTION 06: MANUFACTURING STORY (PURE EDITORIAL / PROCESS GRID) ─── */
 function ManufacturingSection() {
   const { ref, isVisible } = useScrollReveal(0.1);
+
+  const processes = [
+    {
+      step: "01",
+      name: "Cutting & Precision",
+      icon: Scissors,
+      detail: "Pattern cutting and fabric grading across our dedicated production floors.",
+    },
+    {
+      step: "02",
+      name: "Sewing & Assembly",
+      icon: Layers,
+      detail: "Structured stitching, ribbing, and heavy-knit assembly built for durability.",
+    },
+    {
+      step: "03",
+      name: "Finished Garments",
+      icon: CheckCircle,
+      detail: "Quality check, packaging, and allocation dispatch ready for wholesale distribution.",
+    },
+  ];
 
   return (
     <section className="w-full px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-28 lg:py-32 bg-background border-b border-outline">
@@ -467,7 +514,7 @@ function ManufacturingSection() {
           className={`scroll-hidden ${isVisible ? "scroll-visible" : ""} mb-10 sm:mb-12 md:mb-16`}
         >
           <span className="font-display text-xs sm:text-sm uppercase tracking-[0.3em] text-on-surface-variant block mb-3 sm:mb-4">
-            Section 06
+            Section 06 — Process
           </span>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary uppercase leading-[0.9]">
             From Idea
@@ -481,45 +528,31 @@ function ManufacturingSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div
-            className={`scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
-            style={{ transitionDelay: "0.2s" }}
-          >
-            <ImagePlaceholder
-              label="[CLIENT PHOTO: Cutting Floor]"
-              aspectClass="aspect-[3/4]"
-              className="w-full"
-            />
-            <span className="font-display text-xs uppercase tracking-widest text-on-surface-variant mt-3 block">
-              01 — Cutting
-            </span>
-          </div>
-          <div
-            className={`scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
-            style={{ transitionDelay: "0.35s" }}
-          >
-            <ImagePlaceholder
-              label="[CLIENT PHOTO: Sewing / Production Line]"
-              aspectClass="aspect-[3/4]"
-              className="w-full"
-            />
-            <span className="font-display text-xs uppercase tracking-widest text-on-surface-variant mt-3 block">
-              02 — Sewing
-            </span>
-          </div>
-          <div
-            className={`sm:col-span-2 lg:col-span-1 scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
-            style={{ transitionDelay: "0.5s" }}
-          >
-            <ImagePlaceholder
-              label="[CLIENT PHOTO: Finished Garments / Warehouse]"
-              aspectClass="aspect-[3/4]"
-              className="w-full"
-            />
-            <span className="font-display text-xs uppercase tracking-widest text-on-surface-variant mt-3 block">
-              03 — Finished Garments
-            </span>
-          </div>
+          {processes.map((proc, i) => {
+            const Icon = proc.icon;
+            return (
+              <div
+                key={proc.step}
+                className={`brutalist-border bg-surface-container-lowest p-6 sm:p-8 flex flex-col justify-between min-h-[260px] scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
+                style={{ transitionDelay: `${0.2 + i * 0.15}s` }}
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <span className="font-display text-4xl sm:text-5xl text-primary/10 leading-none">
+                    {proc.step}
+                  </span>
+                  <Icon className="text-primary h-7 w-7 flex-shrink-0" />
+                </div>
+                <div>
+                  <h3 className="font-display text-xl sm:text-2xl text-primary uppercase mb-2">
+                    {proc.name}
+                  </h3>
+                  <p className="font-body text-sm text-on-surface-variant leading-relaxed">
+                    {proc.detail}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -658,7 +691,7 @@ function ReachSection() {
   );
 }
 
-/* ─── SECTION 09: FOUNDERS ─── */
+/* ─── SECTION 09: FOUNDERS (PURE EDITORIAL / NO PHOTO PLACEHOLDERS) ─── */
 function FoundersSection() {
   const { ref, isVisible } = useScrollReveal(0.15);
 
@@ -669,7 +702,7 @@ function FoundersSection() {
           className={`scroll-hidden ${isVisible ? "scroll-visible" : ""} mb-10 sm:mb-12 md:mb-16`}
         >
           <span className="font-display text-xs sm:text-sm uppercase tracking-[0.3em] text-on-surface-variant block mb-3 sm:mb-4">
-            Section 09
+            Section 09 — Leadership
           </span>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-primary uppercase leading-tight">
             The People Behind
@@ -680,36 +713,37 @@ function FoundersSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-10 md:mb-12">
           <div
-            className={`scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
+            className={`brutalist-border bg-surface-container-lowest p-6 sm:p-8 flex flex-col justify-between scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
             style={{ transitionDelay: "0.2s" }}
           >
-            <ImagePlaceholder
-              label="[FOUNDER PHOTO: Aboobacker Cheriyath]"
-              aspectClass="aspect-[3/4]"
-              className="w-full mb-4 sm:mb-6"
-            />
-            <h3 className="font-display text-xl sm:text-2xl text-primary uppercase">
-              Aboobacker Cheriyath
-            </h3>
-            <span className="font-display text-xs uppercase tracking-widest text-on-surface-variant">
-              Co-Founder
-            </span>
+            <div>
+              <span className="font-display text-xs uppercase tracking-widest text-secondary font-bold block mb-2">
+                Co-Founder
+              </span>
+              <h3 className="font-display text-2xl sm:text-3xl text-primary uppercase mb-4">
+                Aboobacker Cheriyath
+              </h3>
+            </div>
+            <p className="font-body text-sm text-on-surface-variant border-t border-outline pt-4">
+              Co-founded TOMSTILL in 2008 with a focus on pioneering new trends in men's apparel.
+            </p>
           </div>
+
           <div
-            className={`scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
+            className={`brutalist-border bg-surface-container-lowest p-6 sm:p-8 flex flex-col justify-between scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
             style={{ transitionDelay: "0.35s" }}
           >
-            <ImagePlaceholder
-              label="[FOUNDER PHOTO: Ashraf KM]"
-              aspectClass="aspect-[3/4]"
-              className="w-full mb-4 sm:mb-6"
-            />
-            <h3 className="font-display text-xl sm:text-2xl text-primary uppercase">
-              Ashraf KM
-            </h3>
-            <span className="font-display text-xs uppercase tracking-widest text-on-surface-variant">
-              Co-Founder
-            </span>
+            <div>
+              <span className="font-display text-xs uppercase tracking-widest text-secondary font-bold block mb-2">
+                Co-Founder
+              </span>
+              <h3 className="font-display text-2xl sm:text-3xl text-primary uppercase mb-4">
+                Ashraf KM
+              </h3>
+            </div>
+            <p className="font-body text-sm text-on-surface-variant border-t border-outline pt-4">
+              Co-founded TOMSTILL in 2008, establishing key manufacturing operations in Tiruppur.
+            </p>
           </div>
         </div>
 
