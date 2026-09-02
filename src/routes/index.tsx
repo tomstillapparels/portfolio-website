@@ -41,10 +41,10 @@ function ShowcasePage() {
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
-              to="/categories"
+              to="/about"
               className="bg-primary text-primary-foreground px-8 py-4 font-display text-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-300"
             >
-              View Catalog
+              About Us
             </Link>
             <Link
               to="/inquiry"
