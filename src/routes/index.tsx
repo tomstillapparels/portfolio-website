@@ -22,7 +22,6 @@ export const Route = createFileRoute("/")({
 
 import { ArrowRight } from "lucide-react";
 import { heroEditorial, newArrivals } from "@/lib/catalog";
-import { openWhatsApp } from "@/lib/whatsapp";
 
 function ShowcasePage() {
   return (
@@ -103,19 +102,6 @@ function ShowcasePage() {
                 <div className="flex justify-between items-start">
                   <h3 className="font-display text-xl text-primary leading-tight">{prod.title}</h3>
                 </div>
-                <p className="font-display text-outline uppercase tracking-wider mb-4">
-                  SKU: {prod.sku}
-                </p>
-                <button
-                  onClick={() =>
-                    openWhatsApp(
-                      `Hi TOMSTILL, I'd like a wholesale quote for ${prod.title} (SKU: ${prod.sku}).`,
-                    )
-                  }
-                  className="w-full py-3 border border-outline text-primary font-display text-sm uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-colors"
-                >
-                  Request Quote
-                </button>
               </div>
             </div>
           ))}

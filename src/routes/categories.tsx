@@ -24,7 +24,6 @@ export const Route = createFileRoute("/categories")({
 });
 
 import { catalogProducts } from "@/lib/catalog";
-import { openWhatsApp } from "@/lib/whatsapp";
 
 function CategoriesPage() {
   const { q } = Route.useSearch();
@@ -54,7 +53,7 @@ function CategoriesPage() {
         </div>
         {products.length === 0 && (
           <p className="font-body text-on-surface-variant pb-12">
-            No inventory matches that search. Try a different style, SKU, or fabric.
+            No inventory matches that search. Try a different style or fabric.
           </p>
         )}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pb-12">
@@ -77,17 +76,7 @@ function CategoriesPage() {
                 <div className="flex justify-between items-start mb-2">
                   <h2 className="font-display text-xl text-primary leading-tight">{prod.title}</h2>
                 </div>
-                <p className="font-body text-on-surface-variant text-sm mb-4">{prod.desc}</p>
-                <button
-                  onClick={() =>
-                    openWhatsApp(
-                      `Hi TOMSTILL, I'd like a wholesale quote for ${prod.title} (SKU: ${prod.sku}).`,
-                    )
-                  }
-                  className="mt-auto pt-4 border-t border-outline font-display uppercase text-primary text-left hover:text-secondary transition-colors"
-                >
-                  Request Quote
-                </button>
+                <p className="font-body text-on-surface-variant text-sm">{prod.desc}</p>
               </div>
             </article>
           ))}
