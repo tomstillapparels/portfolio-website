@@ -23,7 +23,7 @@ export const Route = createFileRoute("/categories")({
   component: CollectionsPage,
 });
 
-import { catalogProducts, heroEditorial } from "@/lib/catalog";
+import { catalogProducts } from "@/lib/catalog";
 
 function CollectionsPage() {
   const { q } = Route.useSearch();
@@ -38,29 +38,6 @@ function CollectionsPage() {
         return terms.every((t) => haystack.includes(t));
       })
     : catalogProducts;
-
-  // Collage item layout variants to create an engaging visual rhythm
-  const getAspectClass = (index: number) => {
-    const pattern = index % 7;
-    switch (pattern) {
-      case 0:
-        return "aspect-[3/4] md:col-span-2 md:row-span-2"; // Featured large portrait
-      case 1:
-        return "aspect-[4/5]";
-      case 2:
-        return "aspect-square";
-      case 3:
-        return "aspect-[16/10] md:col-span-2"; // Wide banner
-      case 4:
-        return "aspect-[3/4]";
-      case 5:
-        return "aspect-[4/5]";
-      case 6:
-        return "aspect-square";
-      default:
-        return "aspect-[3/4]";
-    }
-  };
 
   return (
     <main className="flex-grow w-full bg-background min-h-screen">
@@ -81,48 +58,31 @@ function CollectionsPage() {
         </div>
       </section>
 
-      {/* Product Image Collage Grid */}
-      <section className="w-full px-4 sm:px-6 md:px-8 py-8 sm:py-12">
-        <div className="max-w-[1800px] mx-auto">
-          {images.length === 0 ? (
-            <p className="font-body text-on-surface-variant py-12 text-center">
-              No images match that search. Try a different search term.
-            </p>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 auto-rows-[250px] sm:auto-rows-[300px] md:auto-rows-[350px]">
-              {/* Hero editorial image insertion for extra collage depth if not filtering */}
-              {terms.length === 0 && (
-                <div className="relative overflow-hidden bg-surface-variant border-2 border-primary md:col-span-2 md:row-span-2 group">
+      {/* Stacked Images — 1 Image Per Row */}
+      <section className="w-full">
+        {images.length === 0 ? (
+          <p className="font-body text-on-surface-variant py-16 text-center">
+            No images match that search. Try a different search term.
+          </p>
+        ) : (
+          <div className="flex flex-col w-full">
+            {images.map((prod) => (
+              <div
+                key={prod.sku}
+                className="w-full border-b border-outline relative bg-surface-variant overflow-hidden group"
+              >
+                <div className="w-full h-[50vh] sm:h-[65vh] md:h-[80vh] min-h-[350px] relative">
                   <img
-                    src={heroEditorial}
-                    alt="TOMSTILL Editorial"
+                    src={prod.img}
+                    alt="TOMSTILL Apparel"
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute top-3 left-3 bg-primary text-primary-foreground font-display text-[10px] uppercase tracking-widest px-2 py-1">
-                    EDITORIAL
-                  </div>
                 </div>
-              )}
-
-              {images.map((prod, index) => {
-                const aspectClass = getAspectClass(index);
-                return (
-                  <div
-                    key={prod.sku}
-                    className={`relative overflow-hidden bg-surface-variant brutalist-border group ${aspectClass}`}
-                  >
-                    <img
-                      src={prod.img}
-                      alt="TOMSTILL Apparel"
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          )}
-        </div>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Minimal Footer CTA */}
