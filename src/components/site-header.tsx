@@ -7,7 +7,7 @@ import { openWhatsApp } from "@/lib/whatsapp";
 const navLinks = [
   { label: "Showcase", to: "/" },
   { label: "Categories", to: "/categories" },
-  { label: "Brand Story", to: "/brand-story" },
+  { label: "About", to: "/about" },
   { label: "Enquiry", to: "/inquiry" },
 ] as const;
 
