@@ -599,8 +599,7 @@ function HeadquartersSection() {
             <div className="flex items-start gap-3 mb-4">
               <MapPin className="h-5 w-5 text-primary shrink-0 mt-1" />
               <p className="font-body text-base text-on-surface-variant leading-relaxed">
-                First Floor, RAK Tower, beside Mother Opticals, opposite Lulu Mall Walkway,
-                Edappally, Kochi, Ernakulam, Kerala 682024.
+                63 Azad Street, Khaderpet, Tirupur Taluk, Tirupur - 641601
               </p>
             </div>
             <div className="flex items-center gap-3">
