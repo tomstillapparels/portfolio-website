@@ -24,7 +24,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Tom Still is a statement of timeless style, confidence, and individuality. Premium men's apparel, formal shirts, blazers, jackets, and tailored essentials.",
+          "Tom Still is a statement of timeless style, confidence, and individuality. Premium men's apparel, formal shirts, and tailored essentials.",
       },
       { property: "og:title", content: "About Us — TOM STILL" },
       {
@@ -247,11 +247,9 @@ function ProductCategoriesSection() {
 
   const categories = [
     { name: "Formal Shirts", desc: "Timeless elegance & modern precision" },
-    { name: "Blazers", desc: "Structured cuts for boardroom presence" },
     { name: "Printed Shirts", desc: "Statement patterns & contemporary style" },
     { name: "Half Sleeve Shirts", desc: "Casual sophistication for warm weather" },
     { name: "Types of T-Shirts", desc: "Premium knits & casual essentials" },
-    { name: "Jackets", desc: "Outerwear built for presence" },
     { name: "Jeans", desc: "Durable denim tailored for comfort" },
     { name: "Tracksuits", desc: "Athleisure with modern fit" },
     { name: "Tailored Trousers", desc: "Precision stitching & boardroom comfort" },
