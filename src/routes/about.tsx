@@ -605,7 +605,7 @@ function HeadquartersSection() {
             <div className="flex items-center gap-3">
               <Phone className="h-5 w-5 text-primary shrink-0" />
               <span className="font-display text-lg font-bold text-primary">
-                +91 98478 86555
+                +91 90354 29042
               </span>
             </div>
           </div>
