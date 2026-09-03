@@ -20,17 +20,17 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — TOM STILL" },
+      { title: "About Us — TOMSTILL" },
       {
         name: "description",
         content:
-          "Tom Still is a statement of timeless style, confidence, and individuality. Premium men's apparel, formal shirts, and tailored essentials.",
+          "TOMSTILL is a statement of timeless style, confidence, and individuality. Premium men's apparel, formal shirts, and tailored essentials.",
       },
-      { property: "og:title", content: "About Us — TOM STILL" },
+      { property: "og:title", content: "About Us — TOMSTILL" },
       {
         property: "og:description",
         content:
-          "Tom Still is a statement of timeless style, confidence, and individuality. Premium men's fashion crafted with precision.",
+          "TOMSTILL is a statement of timeless style, confidence, and individuality. Premium men's fashion crafted with precision.",
       },
     ],
   }),
@@ -92,7 +92,7 @@ function HeroSection() {
             style={{ transitionDelay: "0.45s" }}
           >
             <p className="font-body text-base sm:text-lg md:text-xl text-on-surface-variant max-w-xl mb-8 leading-relaxed">
-              TOM STILL is more than just a men's fashion brand. It's a statement
+              TOMSTILL is more than just a men's fashion brand. It's a statement
               of timeless style, confidence, and individuality. Rooted in modern
               sophistication and inspired by classic elegance, we craft fashion
               that empowers men to dress with purpose and presence.
@@ -129,7 +129,7 @@ function HeroSection() {
             </div>
             <div className="border-t-2 border-primary pt-4 flex justify-between items-center">
               <span className="font-display text-xs uppercase tracking-widest text-on-surface-variant">
-                TOM STILL
+                TOMSTILL
               </span>
               <span className="font-display text-xs uppercase tracking-widest text-primary font-bold">
                 Timeless Precision
@@ -166,10 +166,10 @@ function VisionMissionSection() {
                 Our Vision
               </h2>
               <p className="font-body text-base text-on-surface-variant leading-relaxed mb-4">
-                Our vision is to establish TOM STILL as a leading global brand in the formal fashion industry, one that represents trust, quality, and sophisticated design.
+                Our vision is to establish TOMSTILL as a leading global brand in the formal fashion industry, one that represents trust, quality, and sophisticated design.
               </p>
               <p className="font-body text-base text-on-surface-variant leading-relaxed">
-                We envision a future where TOM STILL becomes synonymous with professional excellence, inspiring a movement where dressing well is about confidence, character, and the pursuit of success.
+                We envision a future where TOMSTILL becomes synonymous with professional excellence, inspiring a movement where dressing well is about confidence, character, and the pursuit of success.
               </p>
             </div>
             <div className="border-t border-outline pt-4 mt-6">
@@ -195,10 +195,10 @@ function VisionMissionSection() {
                 Our Mission
               </h2>
               <p className="font-body text-base text-on-surface-variant leading-relaxed mb-4">
-                At TOM STILL, our mission is to craft premium-quality formal shirts that blend timeless elegance with modern precision. We aim to empower professionals by offering attire that reflects their ambition, confidence, and refined taste.
+                At TOMSTILL, our mission is to craft premium-quality formal shirts that blend timeless elegance with modern precision. We aim to empower professionals by offering attire that reflects their ambition, confidence, and refined taste.
               </p>
               <p className="font-display text-lg text-primary uppercase leading-snug font-bold">
-                “TOM STILL shirts are made to help you stand tall.”
+                “TOMSTILL shirts are made to help you stand tall.”
               </p>
             </div>
             <div className="border-t border-outline pt-4 mt-6">
@@ -230,7 +230,7 @@ function WhatWeDoSection() {
             What We Do?
           </h2>
           <p className="font-body text-base sm:text-lg text-on-surface-variant leading-relaxed">
-            At TOM STILL, we bring fashion to life by crafting styles that empower individuality and express confidence. Specializing in trend-forward designs and timeless classics, we blend creativity, quality, and comfort to redefine everyday fashion.
+            At TOMSTILL, we bring fashion to life by crafting styles that empower individuality and express confidence. Specializing in trend-forward designs and timeless classics, we blend creativity, quality, and comfort to redefine everyday fashion.
           </p>
           <p className="font-display text-xl text-primary uppercase leading-snug mt-4 font-bold">
             “We don't just follow trends. We set them.”
@@ -315,7 +315,7 @@ function GrowthAndPurposeSection() {
             Growth With Purpose
           </h2>
           <p className="font-body text-base text-on-surface-variant leading-relaxed mb-4">
-            At TOM STILL, growth isn't just measured in numbers. It's woven into every fabric we create, every milestone we achieve, and every customer we inspire.
+            At TOMSTILL, growth isn't just measured in numbers. It's woven into every fabric we create, every milestone we achieve, and every customer we inspire.
           </p>
           <p className="font-body text-base text-on-surface-variant leading-relaxed">
             What started as a small idea has evolved into a brand that reflects style, individuality, and purpose. We've grown our collections and expanded our reach, building a loyal community that believes in quality, authenticity, and innovation.
@@ -359,12 +359,12 @@ function LeadershipSection() {
   const founders = [
     {
       name: "ABOOBACKER CHERIYATH",
-      title: "FOUNDER OF TOM STILL",
-      desc: "Co-founding leader driving TOM STILL's vision, brand values, and strategic growth in the modern apparel industry.",
+      title: "FOUNDER OF TOMSTILL",
+      desc: "Co-founding leader driving TOMSTILL's vision, brand values, and strategic growth in the modern apparel industry.",
     },
     {
       name: "ASHRAF KM",
-      title: "FOUNDER OF TOM STILL",
+      title: "FOUNDER OF TOMSTILL",
       desc: "Co-founding leader guiding product innovation, market expansion, and commitment to quality craftsmanship.",
     },
   ];
@@ -372,12 +372,12 @@ function LeadershipSection() {
   const directors = [
     {
       name: "FAZAL CH",
-      title: "DIRECTOR OF TOM STILL",
+      title: "DIRECTOR OF TOMSTILL",
       desc: "Leading operational excellence, strategic partnerships, and brand experience across all touchpoints.",
     },
     {
       name: "NOUSHAD KM",
-      title: "DIRECTOR OF TOM STILL",
+      title: "DIRECTOR OF TOMSTILL",
       desc: "Directing commercial strategy, supply chain management, and retail distribution networks.",
     },
   ];
@@ -543,7 +543,7 @@ function TeamCultureSection() {
             One Vision, Many Hands
           </h2>
           <p className="font-body text-base sm:text-lg text-on-surface-variant leading-relaxed">
-            At TOM STILL, we believe that great things are never done alone. They're built together. We are a family of creators, dreamers, and doers — standing side by side, sharing ideas, and inspiring each other daily.
+            At TOMSTILL, we believe that great things are never done alone. They're built together. We are a family of creators, dreamers, and doers — standing side by side, sharing ideas, and inspiring each other daily.
           </p>
         </div>
 
@@ -594,7 +594,7 @@ function HeadquartersSection() {
               Corporate Headquarters
             </span>
             <h2 className="font-display text-3xl sm:text-4xl text-primary uppercase leading-tight mb-4">
-              TOM STILL
+              TOMSTILL
             </h2>
             <div className="flex items-start gap-3 mb-4">
               <MapPin className="h-5 w-5 text-primary shrink-0 mt-1" />
