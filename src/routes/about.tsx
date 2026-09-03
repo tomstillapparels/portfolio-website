@@ -356,6 +356,32 @@ function GrowthAndPurposeSection() {
 function LeadershipSection() {
   const { ref, isVisible } = useScrollReveal(0.15);
 
+  const founders = [
+    {
+      name: "ABOOBACKER CHERIYATH",
+      title: "FOUNDER OF TOM STILL",
+      desc: "Co-founding leader driving TOM STILL's vision, brand values, and strategic growth in the modern apparel industry.",
+    },
+    {
+      name: "ASHRAF KM",
+      title: "FOUNDER OF TOM STILL",
+      desc: "Co-founding leader guiding product innovation, market expansion, and commitment to quality craftsmanship.",
+    },
+  ];
+
+  const directors = [
+    {
+      name: "FAZAL CH",
+      title: "DIRECTOR OF TOM STILL",
+      desc: "Leading operational excellence, strategic partnerships, and brand experience across all touchpoints.",
+    },
+    {
+      name: "NOUSHAD KM",
+      title: "DIRECTOR OF TOM STILL",
+      desc: "Directing commercial strategy, supply chain management, and retail distribution networks.",
+    },
+  ];
+
   return (
     <section className="w-full px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-28 bg-background border-b border-outline">
       <div ref={ref} className="max-w-7xl mx-auto">
@@ -368,57 +394,69 @@ function LeadershipSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* CEO & Founder */}
-          <div
-            className={`brutalist-border bg-surface-container-lowest p-6 sm:p-8 flex flex-col justify-between scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
-            style={{ transitionDelay: "0.2s" }}
-          >
-            <div>
-              <span className="font-display text-xs uppercase tracking-widest text-secondary font-bold block mb-2">
-                CEO AND FOUNDER OF TOM STILL
-              </span>
-              <h3 className="font-display text-2xl sm:text-3xl text-primary uppercase mb-4">
-                ASHRAF THAILAND
-              </h3>
-              <p className="font-body text-sm sm:text-base text-on-surface-variant leading-relaxed mb-4">
-                At the heart of our brand is a visionary leader, Ashraf Thailand, the driving force behind TOM STILL. With a passion for fashion and a sharp eye for detail, he founded this brand to redefine modern style while honoring timeless craftsmanship.
-              </p>
-              <p className="font-body text-sm text-on-surface-variant leading-relaxed">
-                Under his leadership, TOM STILL has grown into a trusted name in fashion, known for its bold designs, ethical values, and customer-centric approach.
-              </p>
-            </div>
-            <div className="border-t border-outline pt-4 mt-6">
-              <span className="font-display text-xs uppercase tracking-widest text-primary font-bold">
-                Executive Leadership • Strategic Vision
-              </span>
-            </div>
+        {/* Founders */}
+        <div className="mb-12">
+          <h3 className="font-display text-lg sm:text-xl uppercase tracking-[0.2em] text-secondary font-bold mb-6 border-b border-outline pb-3">
+            Founders
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {founders.map((person, index) => (
+              <div
+                key={person.name}
+                className={`brutalist-border bg-surface-container-lowest p-6 sm:p-8 flex flex-col justify-between scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
+                style={{ transitionDelay: `${0.15 + index * 0.15}s` }}
+              >
+                <div>
+                  <span className="font-display text-xs uppercase tracking-widest text-secondary font-bold block mb-2">
+                    {person.title}
+                  </span>
+                  <h4 className="font-display text-2xl sm:text-3xl text-primary uppercase mb-4">
+                    {person.name}
+                  </h4>
+                  <p className="font-body text-sm sm:text-base text-on-surface-variant leading-relaxed">
+                    {person.desc}
+                  </p>
+                </div>
+                <div className="border-t border-outline pt-4 mt-6">
+                  <span className="font-display text-xs uppercase tracking-widest text-primary font-bold">
+                    Executive Leadership • Strategic Vision
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
+        </div>
 
-          {/* Director */}
-          <div
-            className={`brutalist-border bg-surface-container-lowest p-6 sm:p-8 flex flex-col justify-between scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
-            style={{ transitionDelay: "0.35s" }}
-          >
-            <div>
-              <span className="font-display text-xs uppercase tracking-widest text-secondary font-bold block mb-2">
-                DIRECTOR OF TOM STILL
-              </span>
-              <h3 className="font-display text-2xl sm:text-3xl text-primary uppercase mb-4">
-                ZUBAIR THAILAND
-              </h3>
-              <p className="font-body text-sm sm:text-base text-on-surface-variant leading-relaxed mb-4">
-                A trailblazer in the world of fashion, Zubair Thailand has built the brand on a foundation of creativity, resilience, and purpose. From the very beginning, he envisioned a label that represents identity, confidence, and self-expression.
-              </p>
-              <p className="font-body text-sm text-on-surface-variant leading-relaxed">
-                He brings years of experience in fashion retail, design innovation, and business strategy into the core of TOM STILL's mission.
-              </p>
-            </div>
-            <div className="border-t border-outline pt-4 mt-6">
-              <span className="font-display text-xs uppercase tracking-widest text-primary font-bold">
-                Director • Retail & Design Innovation
-              </span>
-            </div>
+        {/* Directors */}
+        <div>
+          <h3 className="font-display text-lg sm:text-xl uppercase tracking-[0.2em] text-secondary font-bold mb-6 border-b border-outline pb-3">
+            Directors
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {directors.map((person, index) => (
+              <div
+                key={person.name}
+                className={`brutalist-border bg-surface-container-lowest p-6 sm:p-8 flex flex-col justify-between scroll-hidden ${isVisible ? "scroll-visible" : ""}`}
+                style={{ transitionDelay: `${0.35 + index * 0.15}s` }}
+              >
+                <div>
+                  <span className="font-display text-xs uppercase tracking-widest text-secondary font-bold block mb-2">
+                    {person.title}
+                  </span>
+                  <h4 className="font-display text-2xl sm:text-3xl text-primary uppercase mb-4">
+                    {person.name}
+                  </h4>
+                  <p className="font-body text-sm sm:text-base text-on-surface-variant leading-relaxed">
+                    {person.desc}
+                  </p>
+                </div>
+                <div className="border-t border-outline pt-4 mt-6">
+                  <span className="font-display text-xs uppercase tracking-widest text-primary font-bold">
+                    Director • Retail & Operational Leadership
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
