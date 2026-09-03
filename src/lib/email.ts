@@ -7,6 +7,7 @@ export const sendInquiryEmail = createServerFn({ method: "POST" })
       companyName: string;
       email: string;
       phone: string;
+      address?: string;
       volume: string;
     }) => data
   )
@@ -132,6 +133,10 @@ export const sendInquiryEmail = createServerFn({ method: "POST" })
                 <div class="value">
                   ${data.phone ? `<a href="tel:${data.phone}" style="color: #1a1a1a; text-decoration: underline;">${data.phone}</a>` : 'Not provided'}
                 </div>
+              </div>
+              <div class="grid-item">
+                <div class="label">Address</div>
+                <div class="value">${data.address ? data.address.replace(/\n/g, '<br>') : 'Not provided'}</div>
               </div>
               <div class="grid-item">
                 <div class="label">Initial Volume Request</div>

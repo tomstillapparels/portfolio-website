@@ -29,6 +29,7 @@ function InquiryPage() {
     companyName: "",
     email: "",
     phone: "",
+    address: "",
     volume: "50 - 100",
   });
 
@@ -44,6 +45,7 @@ function InquiryPage() {
           companyName: formData.companyName,
           email: formData.email,
           phone: formData.phone,
+          address: formData.address,
           volume: formData.volume,
         }
       });
@@ -64,8 +66,9 @@ function InquiryPage() {
         `Company: ${formData.companyName}`,
         `Email: ${formData.email}`,
         `Phone: ${formData.phone}`,
+        formData.address ? `Address: ${formData.address}` : "",
         `Initial Volume: ${formData.volume} units`,
-      ].join("\n"),
+      ].filter(Boolean).join("\n"),
     );
   };
 
@@ -183,6 +186,20 @@ function InquiryPage() {
                   disabled={submitting}
                 />
               </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <label className="font-display uppercase text-primary text-xs" htmlFor="address">
+                Address / Location
+              </label>
+              <textarea 
+                className="brutalist-input p-3 w-full min-h-[90px] resize-y" 
+                id="address" 
+                rows={3}
+                placeholder="Enter company / delivery address"
+                value={formData.address}
+                onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                disabled={submitting}
+              />
             </div>
             <div className="border-t border-outline pt-6">
               <label className="font-display uppercase text-primary mb-4 block">
